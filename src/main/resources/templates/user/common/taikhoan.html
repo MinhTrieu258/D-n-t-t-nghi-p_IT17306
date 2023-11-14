@@ -1,0 +1,123 @@
+<!doctype html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{user/layout/main-layout}">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+</head>
+
+<body>
+<article layout:fragment="content">
+<div class="container-fluid py-3">
+  <nav class=" " style="font-size: 20px; margin-left: 50px;--bs-breadcrumb-divider: '>'; "
+       aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Xe</li>
+    </ol>
+  </nav>
+  <hr>
+  <div class="row">
+
+    <h3>TRANG TÀI KHOẢN</h3>
+    <b>Xin chào</b> <span></span>
+    <br>
+
+
+    <div class="heard-TT">
+      <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+             aria-orientation="vertical">
+          <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                  data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                  aria-selected="true">Thông tin tài khoản</button>
+          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                  data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                  aria-selected="false">Đơn hàng của bạn</button>
+
+
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+               aria-labelledby="v-pills-home-tab">
+            <div class="container-fluid">
+              <div style="margin-left: 200px;">
+                <h3>THÔNG TIN TÀI KHOẢN</h3>
+              </div>
+
+              <div class="mx-2 py-2">
+                <label for=""><b>Họ tên: </b> AAAA</label>
+
+              </div>
+              <div class="mx-2 py-2">
+                <label for=""><b>Email: </b> AAAA</label>
+
+              </div>
+
+
+              <div class="mx-2 py-2">
+                <label for=""><b>Địa chỉ: </b> AAAA</label>
+
+              </div>
+              <div class="mx-2 py-2">
+                <label for=""><b>Mật khẩu: </b> AAAA</label>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+               aria-labelledby="v-pills-profile-tab">
+            <div class="container-fluid">
+              <div style="margin-left: 200px;">
+                <h3>ĐƠN HÀNG CỦA BẠN</h3>
+              </div>
+              <table class="table " style="margin-left: 90px;">
+                <thead class="table-primary">
+                <tr>
+                  <th scope="col">Đơn hàng</th>
+                  <th scope="col">Ngày tháng</th>
+                  <th scope="col">Địa chỉ</th>
+                  <th scope="col">Giá đơn hàng</th>
+                  <th scope="col">Thanh toán</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+</article>
+</body>
+
+</html>

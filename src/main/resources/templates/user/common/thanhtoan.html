@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{user/layout/main-layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+</head>
+<body>
+<article layout:fragment="content">
+    <main role="main">
+        <div class="container m-3 mt-4 ml-5">
+            <form class="needs-validation" name="" method="post" action="#">
+                <input type="hidden" name="" value="">
+                <div class="py-5 text-center">
+                    <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+                    <h2>Thanh toán </h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 order-md-2 mb-4">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted">Thông tin thanh toán xe</span>
+                            <span class="badge badge-secondary badge-pill">2</span>
+                        </h4>
+                        <ul class="list-group mb-3">
+                            <!-- Sử dụng vòng lặp ng-repeat để hiển thị danh sách sản phẩm từ giỏ hàng -->
+                            <li class="list-group-item d-flex justify-content-between lh-condensed"
+                                ng-repeat="item in cart.items">
+                                <div>
+                                    <img ng-src="/assets/images/{{item.image}}" alt="{{item.name}}" class="img-fluid">
+                                    <h6 class="my-0">{{item.name}}</h6>
+                                    <small class="text-muted">{{item.price | currency}} x {{item.qty}}</small>
+                                </div>
+                                <span class="text-muted">{{item.price * item.qty | currency}}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Tổng số xe</span>
+                                <strong>{{cart.amount | currency}}</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Chuyên chở</span>
+                                <strong>$7,000</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Tổng cộng cho tất cả giảm giá</span>
+                                <strong>{{cart.amount + 7000 | currency}}</strong>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3">Hồ sơ khách hàng</h4>
+                        <!-- Thêm các trường thông tin của khách hàng -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="fullName">Họ và tên</label>
+                                <input type="text" class="form-control" id="fullName" ng-model="customer.fullName">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="phoneNumber">Số điện thoại</label>
+                                <input type="text" class="form-control" id="phoneNumber" ng-model="customer.phoneNumber">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="address">Địa chỉ </label>
+                                <input type="text" class="form-control" id="address" ng-model="customer.address">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" ng-model="customer.email">
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Phương thức thanh toán</h4>
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required="" value="1">
+                                <label class="custom-control-label" for="httt-1">Thanh toán tiền mặt</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required="" value="2">
+                                <label class="custom-control-label" for="httt-2">Thanh toán Internet Banking
+                                </label>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <button class="btn btn btn-lg btn-block text-white" type="submit"  style="background-color: rgb(81, 81, 138);" name="btnDatHang">Thanh toán</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</article>
+</body>
+</html>

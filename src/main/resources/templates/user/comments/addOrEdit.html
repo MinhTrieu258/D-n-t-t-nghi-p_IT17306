@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{user/layout/main-layout}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<article layout:fragment="content">
+		<div class="col  mt-4">
+			<form action="/user/comments/saveOrUpdate" method="post"
+				th:object="${comment}">
+				<div class="card">
+
+					<div class="card-body">
+						<div class="row">
+							<div class="col-7 mt-4">
+								<input type="hidden" th:field="*{isEdit}">
+								<div class="form-group">
+									<label for="productId">Comment</label> <input type="text"
+										class="form-control" name="productId" id="productId"
+										placeholder="" aria-describedby="productIdHid"
+										th:field="*{cmtId}" required="required">
+								</div>
+
+								<div class="form-group">
+									<label>Car</label> <select th:field="*{id}"
+										class="form-control" name="id">
+										<option th:each="item : ${products}" th:value="${item.id}"
+											th:text="${item.name}" th:selected="${item.id == comment.id}">
+											Category Name</option>
+
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="name">Comment the product is here</label>
+									<div class="form-group">
+										<label for="">Description</label>
+										<textarea class="form-control" th:field="*{cmtCar}"
+											name="description" rows="5"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="orderDateln">Comment date</label> <input
+										type="text" class="form-control" name="orderDate"
+										id="orderDateln" placeholder=""
+										aria-describedby="orderDateHid" th:field="*{cmtDate}">
+								</div>
+
+
+
+
+
+							</div>
+
+
+						</div>
+
+					</div>
+					<div class="card-footer text-muted">
+						<a th:href="@{/user/comments/add}" class="btn btn-success">New</a>
+						<button class="btn btn-primary"
+							th:text="${comment.isEdit ? 'Update' : 'Save'}">Save</button>
+							
+							
+						<a th:if="${comment.isEdit}"
+							th:href="@{'/user/comments/delete/' + ${comment.id}}"
+							class="btn btn-danger float-right">Delete</a>
+					</div>
+				</div>
+
+
+
+			</form>
+		</div>
+
+
+
+	</article>
+</body>
+</html>
